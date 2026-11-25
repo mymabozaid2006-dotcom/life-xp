@@ -1,0 +1,37 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [
+    {
+      "source": "/home",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/login",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/register",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/goals",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/tasks",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/progress",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/rewards",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/profile",
+      "destination": "/index.html"
+    }
+  ]
+}
