@@ -1,6 +1,8 @@
 import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
+import { pathToFileURL } from 'node:url';
+import path from 'node:path';
 import { createClient } from '@supabase/supabase-js';
 
 const app = express();
@@ -65,4 +67,10 @@ app.use((err, _req, res, _next) => {
   res.status(500).json({ error: 'Unexpected server error.' });
 });
 
-app.listen(port, () => console.log(`LIFE XP API running at http://localhost:${port}`));
+export default app;
+
+// Keep `npm run server` working locally; Vercel imports the app as a function.
+if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
+  app.listen(port, () => console.log(`LIFE XP API running at http://localhost:${port}`));
+}
+
